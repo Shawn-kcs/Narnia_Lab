@@ -39,7 +39,12 @@ const ApplicationForm = forwardRef(({ selectedCamp }, ref) => {
       setStatus({ loading: false, error: null, success: true });
       setFormData({ name: '', phone: '', email: '' });
     } catch (error) {
-      setStatus({ loading: false, error: error.message, success: false });
+      let errorMessage = error.message;
+      // Check for the specific duplicate key error
+      if (error.message.includes('duplicate key value')) {
+        errorMessage = 'duplicate'; // Use a special identifier for this case
+      }
+      setStatus({ loading: false, error: errorMessage, success: false });
       console.error('Error submitting form:', error.message);
     }
   };
@@ -69,7 +74,15 @@ const ApplicationForm = forwardRef(({ selectedCamp }, ref) => {
               )}
               {status.error && (
                 <Alert variant="danger" onClose={() => setStatus(prev => ({...prev, error: null}))} dismissible>
-                  <strong>오류 발생!</strong> {status.error}
+                  {status.error === 'duplicate' ? (
+                    <>
+                      이미 해당 정보로 신청하셨습니다. 문의사항이 있으시면 <Alert.Link href="http://pf.kakao.com/_DZhmn" target="_blank" rel="noopener noreferrer">공식 카카오 채널</Alert.Link>으로 문의주세요.
+                    </>
+                  ) : (
+                    <>
+                      <strong>오류 발생!</strong> {status.error}
+                    </>
+                  )}
                 </Alert>
               )}
               <Form onSubmit={handleSubmit}>
