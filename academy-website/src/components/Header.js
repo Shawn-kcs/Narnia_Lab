@@ -39,7 +39,7 @@ function Header() {
   return (
     <StyledNavbar scrolled={scrolled} expand="lg" fixed="top">
       <Container>
-        <Navbar.Brand href="#home" className="gradient-text">NARNIA</Navbar.Brand>
+        <Navbar.Brand href="#home" className="gradient-text">NARNIA LAB</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" style={{borderColor: 'rgba(255,255,255,0.1)'}}/>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
