@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Narnia_Lab/static/css/main.36c98f73.css",
-    "main.js": "/Narnia_Lab/static/js/main.281378a6.js",
+    "main.js": "/Narnia_Lab/static/js/main.85d09c7a.js",
     "index.html": "/Narnia_Lab/index.html",
     "main.36c98f73.css.map": "/Narnia_Lab/static/css/main.36c98f73.css.map",
-    "main.281378a6.js.map": "/Narnia_Lab/static/js/main.281378a6.js.map"
+    "main.85d09c7a.js.map": "/Narnia_Lab/static/js/main.85d09c7a.js.map"
   },
   "entrypoints": [
     "static/css/main.36c98f73.css",
-    "static/js/main.281378a6.js"
+    "static/js/main.85d09c7a.js"
   ]
 }
